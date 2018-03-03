@@ -1,9 +1,14 @@
 h1 Listing articles
+= search_form_for @q do |f|
+  = f.label :title_cont
+  = f.search_field :title_cont
+  = f.select :state_cont, options_for_select([%w(Draft draft), %w(Published published)], @q.state_cont)
+  = f.submit
 = link_to t(:new_article), new_article_path
 table
   tr
-    th= t :title
-    th= t :text
+    th= sort_link(@q, :title)
+    th= sort_link(@q, :text)
   - @articles.each do |article|
     tr
       td= article.title
@@ -13,3 +18,5 @@ table
       td= link_to t(:show), article_path(article)
       td= link_to t(:edit), edit_article_path(article)
       td= link_to t(:destroy), article_path(article), method: :delete, data: { confirm: t(:confirm) }
+
+= paginate @articles

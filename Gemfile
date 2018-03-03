@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 ################
 gem 'validates'
 gem 'slim'
+gem "slim-rails"
+gem 'ransack'
+gem 'kaminari'
 ################
 
 group :development, :test do
