@@ -1,11 +1,6 @@
-= form_with(model: [ @article, @article.comments.build ]) do |form|
-  p
-    = form.label :commenter
-    br/
-    = form.text_field :commenter
-  p
-    = form.label :body
-    br/
-    = form.text_area :body
-  p
-    = form.submit
+.container
+ p
+    = simple_form_for [ @article, @article.comments.build ] do |form|
+      = form.input :commenter
+      = form.input :body
+      = form.button :submit

@@ -28,31 +28,35 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
-
-###################
-  comments: "Comments"
-  add_comment: "Add a comment:"
-
-  commenter: "Commenter"
-
-  new_article: "New article"
-  edit_article: "Edit article"
-  title: Title
-  text: Text
-
   edit: "Edit"
   back: "Back"
-  show: "Show"
-  destroy: "Destroy"
-  destroy_comment: "Destroy Comment"
+  comment: "Comment"
   confirm: "Are you sure?"
-
-  error: "error"
-  error_explanation: "%{errors_count} prohibited this article from being saved:"
-  state_validates: "%{value} is not a valid state"
-
-  draft: "draft1"
-  published: "published2"
+  articles:
+    index:
+      caption: "Listing articles"
+      show: "Show"
+      destroy: "Destroy"
+      new_article: "New article"
+    new:
+      caption: "New article"
+    edit:
+      caption: "Edit article"
+    show:
+      caption: "Show article"
+      title: "Title"
+      text: "Text"
+      author: "Author"
+      status: "Status"
+      comments: "Comments"
+      add_comment: "Add comment"
+  comments:
+    comment:
+      commenter: "Commenter"
+      comment: "Comment"
+      destroy_comment: "Destroy comment"
+    form:
+      commenter: "Commenter"
+      text: "Text"
