@@ -6,21 +6,12 @@
       ul
         - @article.errors.full_messages.each do |msg|
           li= msg
+
+
   p
-    = form.label :title
-    br/
-    = form.text_field :title
-  p
-    = form.label :text
-    br/
-    = form.text_area :text
-  p
-    = form.label :author_name
-    br/
-    = form.text_field :author_name
-  p
-    = form.label :state
-    br/
-    = select(:article, :state, [%w(Draft draft), %w(Published published)])
-  p
-    = form.submit
+    = simple_form_for(@article, html: { class: 'form-horisontal' }) do |form|
+      = form.input :title, label: t(:title), label_html: { class: 'my_class' }
+      = form.input :text, as: :text, label: t(:text)
+      = form.input :author_name, label: t(:author_name)
+      = form.input :state, as: :select, collection: ['draft', 'published']
+      = form.button :submit

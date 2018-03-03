@@ -1,12 +1,12 @@
 p
   strong
     = t :title
-    | \:
+    | :
   = @article.title
 p
   strong
     = t :text
-    | \:
+    | :
   = @article.text
 h2= t :comments
 = render @article.comments

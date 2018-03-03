@@ -39,6 +39,9 @@ gem 'slim'
 gem "slim-rails"
 gem 'ransack'
 gem 'kaminari'
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'simple_form'
 ################
 
 group :development, :test do
@@ -47,6 +50,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'i18n-debug'
 end
 
 group :development do
@@ -60,3 +64,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+ruby "2.5.0"

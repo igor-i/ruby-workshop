@@ -3,7 +3,11 @@
 one:
   title: MyString
   text: MyText
+  author_name: MyString
+  state: draft
 
 two:
   title: MyString
   text: MyText
+  author_name: MyString
+  state: draft
