@@ -1,11 +1,12 @@
 language: ruby
 rvm:
   - 2.5.0
+services:
+  - postgresql
 script:
-  # - RAILS_ENV=test bundle exec bin/rails db:create --trace
   - RAILS_ENV=test bundle exec bin/rails db:migrate --trace
   - bundle exec bin/rails db:test:prepare
   - bundle exec bin/rails tests
 before_script:
-  - psql -c 'create database blog_test' -U postgres
-  - psql -c 'createuser app' -U postgres
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database travis_ci_test' -U postgres
