@@ -1,0 +1,12 @@
+p
+  strong
+    = t :commenter
+    | :
+  = comment.commenter
+p
+  strong
+    = t :comment
+    | :
+  = comment.body
+p
+  = link_to t(:destroy_comment), [comment.article, comment], method: :delete, data: { confirm: t(:confirm) }

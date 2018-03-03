@@ -1,0 +1,15 @@
+h1 Listing articles
+= link_to t(:new_article), new_article_path
+table
+  tr
+    th= t :title
+    th= t :text
+  - @articles.each do |article|
+    tr
+      td= article.title
+      td= article.text
+      td= article.author_name
+      td= article.state
+      td= link_to t(:show), article_path(article)
+      td= link_to t(:edit), edit_article_path(article)
+      td= link_to t(:destroy), article_path(article), method: :delete, data: { confirm: t(:confirm) }
