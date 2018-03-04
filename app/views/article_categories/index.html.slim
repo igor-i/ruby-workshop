@@ -1,0 +1,29 @@
+.container
+  h1
+    = t('.caption')
+
+  = link_to t('.new_category'), new_article_category_path
+
+  br
+
+  table
+    tr
+      th= sort_link(@q, :name)
+      th= sort_link(@q, :slug)
+      th[colspan="4"]
+    - @categories.each do |category|
+      tr
+        td= category.name
+        td= category.slug
+        td= link_to t(:show), article_category_path(category)
+        td= link_to t(:edit), edit_article_category_path(category)
+        td= link_to t(:destroy), article_category_path(category), method: :delete, data: { confirm: t('confirm') }
+
+  br
+  = simple_form_for @q, url: article_categories_path, html: { method: 'get' } do |f|
+    = f.search_field :name_cont
+    = f.search_field :slug_cont
+    = f.submit
+
+  br
+  = paginate @categories

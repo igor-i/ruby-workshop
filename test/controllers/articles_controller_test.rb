@@ -3,6 +3,7 @@ require 'test_helper'
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @article = articles(:one)
+    # @category = article_categories(:one)
   end
 
   test "should get index" do
@@ -24,12 +25,13 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
               title: @article.title,
               text: @article.text,
               author_name: @article.author_name,
-              state: @article.state
+              state: @article.state,
+              article_category_id: @article.article_category_id,
             }
         }
     end
 
-    assert_redirected_to article_url(Article.last)
+    assert_response :redirect
   end
 
   test "should show article" do

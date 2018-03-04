@@ -60,3 +60,15 @@ en:
     form:
       commenter: "Commenter"
       text: "Text"
+  article_categories:
+    index:
+      caption: "Listing categories"
+    edit:
+      caption: "Edit category"
+    new:
+      caption: "New category"
+    show:
+      caption: "Show category"
+      name: "Name"
+      slug: "Slug"
+      new_category: "New category"

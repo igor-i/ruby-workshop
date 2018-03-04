@@ -1,0 +1,16 @@
+.container
+  h1
+    = t('.caption')
+  p
+    strong
+      = t('.name')
+      | :
+    = @category.name
+  p
+    strong
+      = t('.slug')
+      | :
+    = @category.slug
+  = link_to t('edit'), edit_article_category_path(@category)
+  | |
+  = link_to t('back'), article_categories_path

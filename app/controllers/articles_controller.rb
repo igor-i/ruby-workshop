@@ -35,6 +35,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
+      # binding.irb
       render 'edit'
     end
   end
@@ -46,7 +47,7 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-    def article_params
-      params.require(:article).permit(:title, :text, :author_name, :state)
-    end
+  def article_params
+    params.require(:article).permit(:title, :text, :author_name, :state, :article_category_id)
+  end
 end

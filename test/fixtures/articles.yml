@@ -5,9 +5,11 @@ one:
   text: MyText
   author_name: MyString
   state: draft
+  category: one
 
 two:
   title: MyString
   text: MyText
   author_name: MyString
   state: draft
+  category: one
